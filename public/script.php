@@ -31,47 +31,29 @@ function getResult($n) {
         }
     }
 }
-
-//        $args = func_get_args();
-// debug_backtrace returns arguments by reference           
-// $stack = debug_backtrace();
-// $args = array();
-// if (isset($stack[0]["args"]))
-//     for($i=0; $i < count($stack[0]["args"]); $i++)
-//         $args[$i] = & $stack[0]["args"][$i];
-// foreach ($argv as $arg) {
-//      $e=explode("=",$arg);
-//      if(count($e)== 2){
-//          $_GET[$e[0]]=$e[1];
-//      }
-//      else   {
-//          $_GET[$e[0]]=0;
-//      }
-//  }
-// foreach ($argv as $arg){
-//     getResult($arg);
-// }
-// $args = func_get_args();
-// var_export($args);
-// foreach ($argv as $arg) {
-//     $e=explode("=",$arg);
-//     if(count($e)==2)
-//         $_GET[$e[0]]=$e[1];
-//     else   
-//         $_GET[$e[0]]=0;
-// }
-// if ($argv) {
-//     foreach ($argv as $k=>$v)
-//     {
-//         if ($k==0) continue;
-//         $it = explode("=",$k);
-//         if (isset($it[1])){
-//             echo $_GET[$it[0]] = $it[1];
-//         } 
-//     }
-// }
-
-    while ($line = fgets(STDIN)) {
-        yield $line;
+while(true){
+    echo "Type in how many test cases will there be, put in less or equal 10 " . "\n";
+    fscanf(STDIN, "%d\n", $number);
+    if($number > 10 || $number <= 0) {
+       echo  "Type in how many test cases will there be again, The number must be less or equal 10." . "\n";
+       fscanf(STDIN, "%d\n", $number);
     }
+    else{
+    break;
+    }
+}
+$i = 0;
+$test_cases;
+$test_case_MAX = 10;
+$test_case_MAX = $number;
+while ($i != $test_case_MAX) {
+    fscanf(STDIN, "%d\n", $test_cases[$i]);
+    $i+=1;
+ }
+
+echo "Output" . "|" . "Input" . "|" . "\n" ;
+for($j=0; $j< $test_case_MAX; $j++ ){
+    echo "|" . $test_cases[$j] . "|" .  getResult($test_cases[$j]) . "\n";
+}
+
 ?>
