@@ -1,4 +1,4 @@
-The project to be run it needs it uses XAMPP:
+The project to be run  it uses XAMPP:
 1)to run the command:
   - the solution in Symfony, the command:
   installation(a command needs to be run): composer require symfony/console
