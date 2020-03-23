@@ -7,3 +7,8 @@ The project to be run it needs it uses XAMPP:
   composer require doctrine/annotations
 
   To run the command please type: php bin/console app:find-results <NUMBER_OF_TESTS>
+
+  2) as for the form:
+  run the command:  composer require symfony/form
+   composer require symfony/twig-bridge
+   composer require symfony/twig-bundle
