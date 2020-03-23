@@ -67,14 +67,17 @@ class FindResultsCommand extends Command
                      echo $last_max;
                 }
             }
+            else{
+                echo "argument out of range";
+            }
         }
 
     echo "Output" . "|" . "Input" . "|" . "\n" ;
     for($j=0; $j< $test_case_MAX; $j++ ){
     echo "|" . $test_cases[$j] . "|" .  getResult($test_cases[$j]) . "\n";
-}
+    }
 
 
-        return 0;
+    return 0;
     }
 }

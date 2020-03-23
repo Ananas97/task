@@ -11,4 +11,4 @@ The project to be run it needs it uses XAMPP:
   run the command:  composer require symfony/form
    composer require symfony/twig-bridge
    composer require symfony/twig-bundle
-   Run symfony server:start and then go http://127.0.0.1:8001/form/p/h/p/task
+   Run symfony server:start and start xampp(Apache)and then go http://127.0.0.1:8001/form/p/h/p/task

@@ -8,9 +8,9 @@
 }
 </style>
 <script>
-        
         function getResult($n) {
-            $last_max=0;
+            $last_max = 0;
+            if($n >= 1 && $n <= 99999){
             var $results = [];
              $results[0] = 0;
              $results[1] = 1;
@@ -31,7 +31,10 @@
                      return $last_max;
                 }
             }
-
+            else{
+                return "poza zakresem";
+            }
+        }
         function printValues($attribute_value, $counter){
             $result = getResult($attribute_value);
             document.getElementById($counter + "s").setAttribute("value", $result);
