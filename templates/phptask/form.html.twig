@@ -1,5 +1,4 @@
 {% extends "base.html.twig" %}
-{% include 'src\Resources\script_to_search_val.php' %}
 {% block body %}
 <style>
 .grid-container {
@@ -8,10 +7,40 @@
   padding: 10px;
 }
 </style>
+<script>
+        
+        function getResult($n) {
+            $last_max=0;
+            var $results = [];
+             $results[0] = 0;
+             $results[1] = 1;
+                if($n == 1){
+                    return $results[1];
+                }
+                else{
+                for($j=1;$j<=$n;$j++){
+                    $results[$j*2] = $results[$j];
+                    $results[$j*2 + 1] = $results[$j] +  $results[$j+1];
+                     if($results[$j*2] && $last_max<$results[$j*2]){
+                         $last_max = $results[$j*2];
+                        }
+                         else if($results[$j*2+1] && $last_max<$results[$j*2]){
+                             $last_max = $results[$j*2 + 1];
+                         }
+                    }
+                     return $last_max;
+                }
+            }
+
+        function printValues($attribute_value, $counter){
+            $result = getResult($attribute_value);
+            document.getElementById($counter + "s").setAttribute("value", $result);
+        }
+</script>
 <form action="/POST" class="start">
 <div class="grid-container">
  {% for i in 0..9 %}
- <div class="row"><input placeholder="Wpisz liczbę" type="text" name="test_case" id="{{i}}"> <input type="button" value="SZUKAJ WARTOŚCI"  onClick="printValues(document.getElementById('{{i}}').value)"><input type="text" id="{{i}}+'s'" name="solution" readonly></div>
+ <div class="row"><input placeholder="Wpisz liczbę" type="text" name="test_case" id="{{i}}"> <input type="button" value="SZUKAJ WARTOŚCI"  onClick="printValues(document.getElementById('{{i}}').value, {{i}})"><input type="text" id="{{i}}s" name="solution" readonly></div>
  {% endfor %}
 </form>
 {% endblock %}
