@@ -8,7 +8,7 @@ The project to be run it needs it uses XAMPP:
   To run the command please type: php bin/console app:find-results <NUMBER_OF_TESTS>
   If no argument is passed, then the default number of test cases is 10. 
   Solution:
-  ![Test Image 1]("command.JPG")
+  ![Solution Image 1](command.JPG)
 
   2) as for the form:
   run the command:  composer require symfony/form
@@ -16,4 +16,4 @@ The project to be run it needs it uses XAMPP:
    composer require symfony/twig-bundle
    Run symfony server:start and start xampp(Apache)and then go http://127.0.0.1:8001/form/p/h/p/task
 Solution:
-![Test Image 2]("form.JPG")
+![Solution Image 2](form.JPG)
